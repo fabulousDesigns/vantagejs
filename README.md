@@ -73,7 +73,7 @@ We welcome contributors who:
 Check out `CONTRIBUTING.md` (coming soon!) or open an issue!
 
 ### 💬 Let's Connect
-This project is led by Bernard Maina, a developer passionate about optimization and dev experience.
+This project is led by Bernard Maina & Marvin Kariuki, who are just chill devs passionate about optimization and dev experience.
 
 Follow our journey, star the repo ⭐, and let's build the future of JS performance together!
 
