@@ -1,80 +1,77 @@
 # VantageJS ⚡
 
-**The future of JavaScript performance tooling – powered by Rust.**
+**Static performance analysis for JavaScript applications powered by Rust**
 
-![Build](https://img.shields.io/badge/build-passing-brightgreen)  
-![Rust](https://img.shields.io/badge/made_with-Rust-orange)  
-![Platform](https://img.shields.io/badge/platform-JS%2FTS%20%7C%20Node%20%7C%20Frameworks-blueviolet)  
-![Version](https://img.shields.io/badge/version-0.0.1-blue)
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![Target](https://img.shields.io/badge/target-React%20%7C%20Next.js-61dafb)
+![Rust](https://img.shields.io/badge/powered_by-Rust-orange)
+
+## The Problem
+
+Modern JavaScript frameworks like React and Next.js make it easy to build complex applications, but they also make it easy to introduce subtle performance issues that only manifest at scale:
+
+- Components that trigger excessive re-renders
+- Functions that cause V8 deoptimizations in hot paths
+- Patterns that break inline caching in the V8 engine
+- Memory leaks from stale closures and forgotten references
+- Inefficient data structures that create GC pressure
+
+These issues are difficult to detect during development and often only become apparent when users report slowness in production. By then, the performance debt is already affecting your business.
+
+**Current solutions fall short:**
+
+- Runtime profilers only show problems after they occur
+- Existing linters focus on code style and potential bugs, not performance
+- Performance optimization requires deep knowledge of V8 internals
+- Manual code reviews can't consistently catch all performance pitfalls
+
+## Our Solution
+
+VantageJS is an ESLint-like static analysis tool that scans your React and Next.js code to identify patterns known to cause performance issues in the V8 JavaScript engine.
+
+**Key features:**
+
+- **Static analysis**: Catch performance issues before your code runs
+- **V8-focused rules**: Based on research and patterns from the V8 team
+- **Framework-aware**: Specific rules for React and Next.js optimization
+- **Clear explanations**: Learn why an issue impacts performance and how to fix it
+- **VSCode integration**: See warnings directly in your editor as you code
+
+## How It Works
+
+VantageJS analyzes your codebase for common V8 performance pitfalls:
+
+1. **Function optimization killers** - Patterns that prevent V8 from optimizing your functions
+2. **Megamorphic operations** - Code that breaks V8's inline caching system
+3. **Hidden class transitions** - Object mutations that slow down property access
+4. **React-specific issues** - Components with expensive re-render patterns
+5. **Next.js optimizations** - Inefficient data fetching and routing patterns
+
+## Getting Started
+
+Our first MVP will be delivered as a VSCode extension. Stay tuned for installation instructions and early access.
+
+## Roadmap
+
+- [x] Core concept and rule definitions
+- [ ] VSCode extension (MVP)
+- [ ] CLI tool integration
+- [ ] CI/CD integration
+- [ ] Custom rule configuration
+- [ ] Automated fixes for common issues
+
+## Why Rust?
+
+VantageJS is built with Rust to ensure:
+
+- Lightning-fast analysis even on large codebases
+- Memory safety and reliability
+- Efficient cross-platform distribution
+
+## Contributing
+
+We welcome contributions from developers passionate about JavaScript performance optimization! Check back soon for our contribution guidelines.
 
 ---
 
-## 🚀 What is VantageJS?
-
-**VantageJS** is a blazing-fast CLI tool, written in Rust, that helps developers **detect and eliminate performance pitfalls** in JavaScript and TypeScript projects. Inspired by the aura of ESLint, VantageJS brings V8 optimization insights directly into your development workflow – whether you're writing vanilla JS, building SPAs with React/Vue, or working with Node.js.
-
-> 🧠 Designed with precision. Built for scale. Powered by Rust.
-
----
-
-## 🎯 Core Features (v0.0.1 MVP)
-
-- ⚡ Lightning-fast CLI initialization
-- 🎉 Stylish terminal banner to mark your territory
-- ✅ Foundation for future static code analysis of:
-    - V8 optimization pitfalls
-    - Hidden performance traps (e.g., deopts, inline cache misses)
-    - Memory leaks & GC hotspots
-
----
-
-## 🛣️ Roadmap
-
-- ✅ CLI Bootstrapped in Rust
-- 🧠 V8 Optimization Rule Engine (WIP)
-- 🧪 AST parsing and pattern detection
-- 🌐 Support for JS, TS, Node.js, and modern JS frameworks
-- 🔌 Editor Integrations (VSCode, WebStorm)
-- 📊 Team Dashboard (SaaS – Phase 2)
-
----
-
-## 🛠️ Getting Started
-
-### Prerequisites
-
-- Rust (`>= 1.60`)
-- Cargo
-
-### Run Locally
-
-```bash
-git clone https://github.com/fabulousDesigns/vantagejs.git
-cd vantagejs
-cargo run
-```
-
-### 🧩 Philosophy
-> We believe that performance should be part of your code's linting process.
-
-VantageJS is here to bring that future – today. We strip away human bias by relying on research from the official [V8 Blog](https://v8.dev/blog) and Rust’s raw power to build an ESLint-style performance engine that understands the JS runtime like V8 does.
-
-### 🤝 Contributing
-We welcome contributors who:
-
-💻 Love low-level optimization
-
-❤️ JavaScript, TypeScript, or Rust
-
-📚 Are curious about V8 internals
-
-🧪 Want to help craft next-gen static tools
-
-Check out `CONTRIBUTING.md` (coming soon!) or open an issue!
-
-### 💬 Let's Connect
-This project is led by Bernard Maina & Marvin Kariuki, who are just chill devs passionate about optimization and dev experience.
-
-Follow our journey, star the repo ⭐, and let's build the future of JS performance together!
-
-Reach out via Email: mainabenpro@gmail.com
+Built with ♥ by developers tired of hunting down mysterious performance issues
